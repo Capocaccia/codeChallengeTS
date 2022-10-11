@@ -1,16 +1,10 @@
 {
   "name": "jest-typescript-starter",
   "version": "1.0.0",
-  "description": "A starter for a node app with Jest, Typescript, and some other basic configurations",
-  "main": "index.ts",
-  "repository": "https://github.com/charlesdobson/jest-typescript-starter.git",
-  "author": "charlesdobson <charlesdobson92@gmail.com>",
+  "description": "A collection of code challenges",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "tsc",
-    "serve": "NODE_ENV=development nodemon --exec 'ts-node' src/index.ts",
-    "start": "NODE_ENV=production node dist/index.js",
     "test": "jest --watchAll",
     "test:ci": "jest --ci",
     "test:coverage": "jest --coverage",
