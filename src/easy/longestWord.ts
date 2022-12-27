@@ -1,10 +1,14 @@
-// DESCRIPTION:
-// When given a string of space separated words, return the word with the longest length.  If there are multiple words with the longest length, return the last instance of the word with the longest length.
+export const longestWord = (stringOfWords: string, splitAt = " ") => {
+  const splitWords = stringOfWords.split(splitAt);
 
-// EXAMPLE:
-// 'red white blue' //returns string value of white
-// 'red blue gold' //returns gold
+  let currentLongestWordFound = "";
 
-export const longestWord = (stringOfWords: string) => {
-  return false;
+  splitWords.forEach((word) => {
+    if (word.length < currentLongestWordFound.length) {
+      return;
+    }
+    currentLongestWordFound = word;
+  });
+
+  return currentLongestWordFound;
 };
