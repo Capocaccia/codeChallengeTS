@@ -7,5 +7,7 @@
 export const moveZeros = (
   arr: (string | number | boolean | null | object | Array<[]>)[]
 ) => {
-  return false;
+  const zeros = arr.filter((item) => item === 0);
+  const nonZeros = arr.filter((item) => item !== 0);
+  return [...nonZeros, ...zeros];
 };
