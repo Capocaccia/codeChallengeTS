@@ -12,7 +12,16 @@
 
 export const getConsecutiveItems = (
   items: string | number,
-  key: string | number
+  key: string | number,
 ) => {
-  return false;
+  const keyString = String(key);
+  const itemsString = String(items);
+  if (String(items).indexOf(String(key)) == -1) {
+    return 0;
+  } else {
+    if (String(items).includes(String(key))) {
+      var count = itemsString.match(new RegExp(keyString, "g"))?.length;
+      return count;
+    }
+  }
 };
