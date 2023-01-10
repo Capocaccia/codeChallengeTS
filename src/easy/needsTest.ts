@@ -12,12 +12,17 @@
 
 // Since the instruction above sound more like it expects the first io combo I've declared above I will work through the problem from this view point:
 
-const testableFunction = (a: Array<string | number>, b: {[key: string | number]: any }) => {
- if(a.includes(Object.keys(b)[0])) {
-    return a.filter(item => {
-        return item !== Object.keys(b)[0]
-    })
- } else {
-     return false
- }
-}
+const testableFunction = (
+  a: Array<string | number>,
+  b: { [key: string | number]: any },
+) => {
+  if (a.includes(Object.keys(b)[0])) {
+    return a.filter((item) => {
+      return item !== Object.keys(b)[0];
+    });
+  } else {
+    return false;
+  }
+};
+
+export { testableFunction };
