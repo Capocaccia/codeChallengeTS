@@ -10,9 +10,40 @@
 // "abcdaaadse", "a"  //returns integer value of 3
 // "abcdaaadse", "z"  //returns integer value of 0
 
+// Loop Condition: i < string length
+// Use two counters for tracking --> count and maxCount;
+// Using two pointers for max counts --> i and j
+// Initial Condition: i:0, j:0 (j = i)
+// if: a[i] === a[j] === ele --> count++ and maxCount to be max of [count, maxCount];
+// reset conditions:
+// 1.) when j reaches the end
+// 2.) itemsArr[j] not equals key
+// i++ and j = i;
+
 export const getConsecutiveItems = (
   items: string | number,
   key: string | number
 ) => {
-  return false;
+  const itemsArr = String(items).split("");
+  const keyToString = String(key);
+  let i = 0,
+    j = 0,
+    count = 0,
+    maxCount = 0;
+
+  while (i < itemsArr.length) {
+    if (itemsArr[i] === keyToString && itemsArr[j] === keyToString) {
+      j++;
+      count++;
+      maxCount = Math.max(count, maxCount);
+    }
+    // reset condition:
+    if (itemsArr[j] !== keyToString || j > itemsArr.length) {
+      count = 0;
+      i++;
+      j = i;
+    }
+  }
+
+  return maxCount;
 };
