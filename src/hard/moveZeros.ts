@@ -7,5 +7,15 @@
 export const moveZeros = (
   arr: (string | number | boolean | null | object | Array<[]>)[]
 ) => {
-  return false;
+  let count = 0;
+  const zero = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === zero) {
+      arr.splice(i, 1);
+      i--;
+      count++;
+    }
+  }
+
+  return [...arr, ...new Array(count).fill(zero)];
 };
