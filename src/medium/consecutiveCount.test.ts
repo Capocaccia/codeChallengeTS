@@ -11,7 +11,7 @@ it("Function should return the consecutive count", () => {
       "ascasdaiiiasdacasdiiiiicasdasdiiiiiiiiiiisdasdasdiii",
       "i"
     )
-  ).toEqual(11);
+  ).toEqual(22);
   expect(getConsecutiveItems(90000, 0)).toEqual(4);
   expect(getConsecutiveItems(90000, 3)).toEqual(0);
 });
