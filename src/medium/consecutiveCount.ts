@@ -14,19 +14,28 @@ export const getConsecutiveItems = (
   items: string | number,
   key: string | number
 ) => {
-  let itemsStr: any = items.toString();
-  let keyStr: string = key.toString();
-
-  if (!itemsStr.includes(keyStr)) {
+  let itemsArr: any = items.toString().split('');
+  let keyStr = key.toString();
+  if (!itemsArr.includes(keyStr)) {
     return 0;
   }
-
-  let count: any = {};
-  itemsStr = itemsStr.split('');
-
-  for (let each of itemsStr) {
-    count[each] = count[each] + 1 || 1;
+  let maxVal = 0;
+  let count = 0;
+  for (let i = 0; i < itemsArr.length; i++) {
+    if (itemsArr[i] === keyStr) {
+      count++;
+      if (i === itemsArr.length-1) {
+        if (count > maxVal) {
+        maxVal = count;
+        count = 0;
+        }
+      }
+    } else {
+      if (count > maxVal) {
+        maxVal = count;
+        count = 0;
+      }
+    }
   }
-
-  return count[keyStr];
+  return maxVal;
 };
