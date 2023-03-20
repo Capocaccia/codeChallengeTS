@@ -2,8 +2,9 @@
 // this function should remove any items from the original array that match the key
 // if no values match the key, false should be returned
 
-// I worked under the assumption that i was returning new array without keys and place matching array was?
-// Asuming a key can only be found once in array
+//Assumptions
+// I worked under the assumption that I was returning new array without keys and the place matching array was found?
+// Assuming a key can only be found once in array.
 
 export const findKey = (
     listOfItems: (string | number)[], key: (string | number)
