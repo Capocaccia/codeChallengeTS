@@ -5,6 +5,15 @@
 // 'red white blue' //returns string value of white
 // 'red blue gold' //returns gold
 
-export const longestWord = (stringOfWords: string) => {
-  return false;
+export const longestWord = (stringOfWords: string): string | null => {
+  const words = stringOfWords.split(' ');
+  let longestWord: string | null = null;
+  
+  for (const word of words) {
+    if (!longestWord || word.length >= longestWord.length) {
+      longestWord = word;
+    }
+  }
+  
+  return longestWord;
 };
