@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { longestWord } from "./longestWord";
 
 it("Function should return the longest word", () => {
