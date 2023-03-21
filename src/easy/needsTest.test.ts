@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import removeMatchingArrayItems from "./needsTest";
+import { removeMatchingArrayItems } from "./needsTest";
 
 describe("removeMatchingArrayItems function", () => {
   it("should remove matching items from the array and return true", () => {

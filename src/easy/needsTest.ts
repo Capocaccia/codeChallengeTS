@@ -3,7 +3,7 @@
 // this function should remove any items from the original array that match the key
 // if no values match the key, false should be returned.
 
-function removeMatchingArrayItems(array: number[], key: string | number) {
+ export function removeMatchingArrayItems(array: number[], key: string | number) {
   //initialize matchesKey variable to false (no matches)
   let matchesKey = false;
 
