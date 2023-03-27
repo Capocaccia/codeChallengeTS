@@ -5,6 +5,18 @@
 // 'red white blue' //returns string value of white
 // 'red blue gold' //returns gold
 
+
+//splits on space character then checks wich word is longest ruturning the last word if more than one matches the longest length.
 export const longestWord = (stringOfWords: string) => {
-  return false;
+  var input = stringOfWords;
+  var splitInput = input.split(' ');
+  var length = 0;
+  var longestWord;
+  splitInput.forEach(element => {
+    if(element.length >= length){
+      length = element.length;
+      longestWord = element;
+    }
+  });
+  return longestWord;
 };

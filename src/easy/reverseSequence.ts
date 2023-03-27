@@ -4,5 +4,10 @@
 // EXAMPLE:
 // n=5 //returns [5,4,3,2,1]
 export const reverseSeq = (n: number) => {
-  return false;
+  //creates an array and adds numbers in reverse order
+  var arr = [];
+  for(var i = 1; i <= n; i++){
+    arr.unshift(i);
+  }
+  return arr;
 };
