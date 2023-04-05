@@ -7,5 +7,7 @@
 export const moveZeros = (
   arr: (string | number | boolean | null | object | Array<[]>)[]
 ) => {
-  return false;
+  const output = arr.filter((el) => el !== 0);
+  while (output.length < arr.length) output.push(0);
+  return output;
 };
