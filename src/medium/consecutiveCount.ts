@@ -14,5 +14,24 @@ export const getConsecutiveItems = (
   items: string | number,
   key: string | number
 ) => {
-  return false;
+  if (typeof items === "number") {
+    items = items.toString();
+  }
+  if (typeof key === "number") {
+    key = key.toString();
+  }
+
+  let streak = 0;
+  let longest = 0;
+
+  for (const item of items) {
+    if (item === key) {
+      streak++;
+      longest = Math.max(longest, streak);
+    } else {
+      streak = 0;
+    }
+  }
+
+  return longest;
 };
