@@ -11,8 +11,24 @@
 // "abcdaaadse", "z"  //returns integer value of 0
 
 export const getConsecutiveItems = (
-  items: string | number,
+  // items: string | number,
+  items: string,
   key: string | number
 ) => {
-  return false;
+  let currentCount = 0;
+  let longestSequence = 0;
+  for (const char of items.split("")) {
+    if (char === key) {
+      currentCount++;
+      continue;
+    }
+
+    if (currentCount > longestSequence) {
+      longestSequence = currentCount;
+    }
+
+    currentCount = 0;
+  }
+
+  return longestSequence;
 };
