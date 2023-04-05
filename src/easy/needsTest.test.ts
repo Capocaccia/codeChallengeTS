@@ -1,16 +1,26 @@
 import { filterArrByKey } from "./needsTest";
 
-test("Filters with strings", () => {
-  const arr = ["bear", 145, "tiger", "lion", 0.8, "hornet", "tiger", "whale"];
-  expect(filterArrByKey(arr, "tiger")).toStrictEqual(["tiger", "tiger"]);
-});
+it("Function should filter out non matching characters", () => {
+  expect(
+    filterArrByKey(
+      ["bear", 145, "tiger", "lion", 0.8, "hornet", "tiger", "whale"],
+      "tiger"
+    )
+  ).toStrictEqual(["tiger", "tiger"]);
 
-test("Returns false for no matches", () => {
-  const arr = ["bear", 145, "tiger", "lion", 0.8, "hornet", "tiger", "whale"];
-  expect(filterArrByKey(arr, 45)).toBe(false);
-});
+  expect(
+    filterArrByKey(
+      ["bear", 145, "tiger", "lion", 0.8, "hornet", "tiger", "whale"],
+      "tiger"
+    )
+  ).toStrictEqual(["tiger", "tiger"]);
 
-test("Filters out loose equals", () => {
-  const arr = ["4", 4, "4"];
-  expect(filterArrByKey(arr, 4)).toStrictEqual([4]);
+  expect(
+    filterArrByKey(
+      ["bear", 145, "tiger", "lion", 0.8, "hornet", "tiger", "whale"],
+      45
+    )
+  ).toBe(false);
+
+  expect(filterArrByKey(["4", 4, "4"], 4)).toStrictEqual([4]);
 });
