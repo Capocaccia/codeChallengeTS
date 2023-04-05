@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "jest -- src/easy/needsTest.test.ts --watch",
+    "test": "jest --watchAll",
     "test:ci": "jest --ci",
     "test:coverage": "jest --coverage",
     "lint": "eslint ./src --ext .ts"

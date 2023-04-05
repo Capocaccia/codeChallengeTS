@@ -7,5 +7,24 @@
 export const moveZeros = (
   arr: (string | number | boolean | null | object | Array<[]>)[]
 ) => {
-  return false;
+  let arrCopy = [...arr];
+  let index = 0;
+
+  while (index < arr.length) {
+    const value = arrCopy[index];
+
+    if (value === 0) {
+      const beginning = arrCopy.slice(0, index);
+      const end = arrCopy.slice(index + 1);
+
+      // If the end of the array is all zeroes
+      if (end.every((value) => value === 0)) {
+        return arrCopy;
+      }
+
+      arrCopy = [...beginning, ...end, 0];
+    } else {
+      index++;
+    }
+  }
 };
