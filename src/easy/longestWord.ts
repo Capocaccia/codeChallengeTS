@@ -6,5 +6,13 @@
 // 'red blue gold' //returns gold
 
 export const longestWord = (stringOfWords: string) => {
-  return false;
+  const wordsArr = stringOfWords.split(" ");
+  let longest = "";
+
+  for (const word of wordsArr) {
+    if (word.length >= longest.length) {
+      longest = word;
+    }
+  }
+  return longest;
 };
